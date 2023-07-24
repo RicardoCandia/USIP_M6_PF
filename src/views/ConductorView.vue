@@ -1,25 +1,25 @@
 <template>
     <div>
-        <h5>Vehículo</h5>
+        <h5>Conductor</h5>
         <tabs>
             <template v-slot:lista>
-                <search placeholder="Buscar Vehículo" @searchtext="searchFx($event)"></search>
+                <search placeholder="Buscar Conductor" @searchtext="searchFx($event)"></search>
                 
                 <table class="highlight responsive-table card">
                     <thead>
                         <tr>
-                            <th>Placa</th>
-                            <th>Año</th>
-                            <th>Marca</th>
+                            <th>Nombre </th>
+                            <th>Licencia</th>
+                            <th>Telefono</th>
                             <th></th>
                         </tr>
                     </thead>
 
                     <tbody>
-                        <tr v-for="item in items.lstVehiculo">
-                            <td>{{ item.placa }}</td>
-                            <td>{{ item.anio }}</td>
-                            <td>{{ item.marca }}</td>
+                        <tr v-for="item in items.lstConductor">
+                            <td>{{ item.nombre }} {{ item.paterno }} {{ item.materno }}</td>
+                            <td>{{ item.licencia }}</td>
+                            <td>{{ item.telefono }}</td>
                             
                         </tr>
                     </tbody>
@@ -28,24 +28,24 @@
             </template>
             <template v-slot:nuevo>
                 <div class="row card p-2" style="max-width: 650px;">
-                    <h6>Formulario Vehículo</h6>
+                    <h6>Formulario Conductor</h6>
                     <form class="col s12" @submit.prevent="saveProduct()">
                         <div class="row">
                             <div class="input-field col s12">
                                 <input id="nombreEmpresa" type="text" class="validate" v-model="payload.nombreEmpresa">
-                                <label for="nombreEmpresa"> Placa</label>
+                                <label for="nombreEmpresa"> Nombre</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
                                 <input id="nombreResponsable" type="number" class="validate" v-model="payload.nombreResponsable">
-                                <label for="nombreResponsable"> Año</label>
+                                <label for="nombreResponsable"> Licencia</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
                                 <input id="direccion" type="text" class="validate" v-model="payload.direccion">
-                                <label for="direccion"> Marca</label>
+                                <label for="direccion"> Teléfono</label>
                             </div>
                         </div>
                         <div class="row">
@@ -99,7 +99,7 @@ export default {
         getItems() {
             this.axios({
                 method: 'get',
-                url: this.api + '/Vehiculo/Get' 
+                url: this.api + '/Conductor/Get' 
             })
                 .then((response) => {
                     this.items = response.data;
@@ -113,7 +113,7 @@ export default {
         saveProduct() {
             this.axios({
                 method: 'post',
-                url: this.api + '/Vehiculo/Add',
+                url: this.api + '/Conductor/Add',
                 data: this.payload
             })
                 .then((response) => {
@@ -144,7 +144,7 @@ export default {
             if(confirm("Esta seguro que desea eliminar.")){
             this.axios({
                 method: 'delete',
-                url: this.api + '/Vehiculo/Delete?id=' + id
+                url: this.api + '/Conductor/Delete?id=' + id
             })
                 .then((response) => {
                     this.getItems();

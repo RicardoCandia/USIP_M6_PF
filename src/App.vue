@@ -1,18 +1,17 @@
 <template>
+  <div class="empresa"><a href="#" class="brand-logo center"><i class="material-icons">cloud</i>Minera San Cristóbal
+      S.A.</a></div>
   <nav>
     <div class="nav-wrapper">
-      <img alt="Minera San Cristóbal S.A." src="../src/assets/logo.png">
-      <a href="#" class="brand-logo right" ><i class="material-icons">cloud</i>Minera San Cristóbal S.A.</a>
-    <router-link to="/">Inicio</router-link> |
-    <router-link to="/about">Empresa</router-link> |
-    <router-link to="/about">Conductor</router-link> |
-    <router-link to="/about">Vehiculo</router-link> |
-    <router-link to="/about">Contrato</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
+      <router-link to="/">Inicio</router-link> |
+      <router-link to="/empresa">Empresa</router-link> |
+      <router-link to="/conductor">Conductor</router-link> |
+      <router-link to="/vehiculo">Vehiculo</router-link> |
+      <router-link to="/contrato">Contrato</router-link> |
+      <router-link to="/about">About</router-link>
+    </div>
   </nav>
   <router-view />
 </template>
 
-<style>
-</style>
+<style></style>

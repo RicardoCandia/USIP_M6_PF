@@ -1,9 +1,20 @@
 <template>
   <body>
     <div>
-<p></p>
+      <h1>
+        SISTEMA DE TRANSPORTE Y LOGÍSTICA
+      </h1>
     </div>
+<div>
+  <a href="/Solicitud" class="btn-floating btn-large waves-effect waves-light blue"><i class="material-icons">add</i> </a>Nueva Solicitud
 
+  <p>
+
+  </p>
+  <P>
+
+  </P>
+</div>
   </body>
   <Footer> </Footer>
 </template>
@@ -21,5 +32,4 @@ export default {
   }
 };
 </script>
-<style lang="scss">
-</style>
+<style lang="scss"></style>

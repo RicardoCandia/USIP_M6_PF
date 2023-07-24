@@ -4,22 +4,27 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  
+}
+.empresa{
   background-color: #173660;
 }
-
 nav {
   padding: 30px;
   background-color: #173660;
+  height: 80px; 
   a {
     font-weight: bold;
-    color: #2c3e50;
+    color: white;
 
     &.router-link-exact-active {
       color: #42b983;
     }
   }
 }
-footer{
+.footer{
   background-color: #173660;
-  color: blue;
+}
+.footer-copyright{
+  color:white
 }
